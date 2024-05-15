@@ -11,6 +11,9 @@
 AppId={{832F97D2-D7B6-4AC3-9B24-F66131E748A2}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
+VersionInfoVersion={#MyAppVersion}
+AppPublisher=Vladimir Rytov
+AppPublisherURL=https://github.com/VladimirRytov/Advertisementer
 ;AppVerName={#MyAppName} {#MyAppVersion}
 DefaultDirName={autopf64}\{#MyAppName}
 DisableProgramGroupPage=yes
