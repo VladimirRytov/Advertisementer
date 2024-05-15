@@ -1,0 +1,1308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.40.0 -->
+<interface>
+  <requires lib="gtk+" version="3.24"/>
+  <object class="GtkImage" id="CancelImage">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="icon-name">process-stop-symbolic</property>
+  </object>
+  <object class="GtkImage" id="CancelImage1">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="icon-name">process-stop-symbolic</property>
+  </object>
+  <object class="GtkListStore" id="ClientAuthorizationTypeListStore">
+    <columns>
+      <!-- column-name authType -->
+      <column type="gchararray"/>
+    </columns>
+  </object>
+  <object class="GtkListStore" id="ConnectToDatabaseLocalDatabasesListStore">
+    <columns>
+      <!-- column-name database -->
+      <column type="gchararray"/>
+    </columns>
+  </object>
+  <object class="GtkListStore" id="ConnectToDatabaseNetworkDatabasesListStore">
+    <columns>
+      <!-- column-name database -->
+      <column type="gchararray"/>
+    </columns>
+  </object>
+  <object class="GtkEntryBuffer" id="ConnectToDatabasePasswordBuffer"/>
+  <object class="GtkEntryBuffer" id="ConnectToServerPasswordBuffer"/>
+  <object class="GtkImage" id="CreateImage">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="icon-name">emblem-ok-symbolic</property>
+  </object>
+  <object class="GtkImage" id="CreateImage1">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="icon-name">emblem-ok-symbolic</property>
+  </object>
+  <object class="GtkImage" id="image1">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="icon-name">view-refresh-symbolic</property>
+  </object>
+  <object class="GtkImage" id="image2">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="icon-name">user-trash-symbolic</property>
+  </object>
+  <object class="GtkWindow" id="LoginWindow">
+    <property name="height-request">600</property>
+    <property name="can-focus">False</property>
+    <child>
+      <object class="GtkBox">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">5</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Режим работы</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans 17"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="padding">7</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkStackSwitcher" id="SelectModeStackSwitcher">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="halign">center</property>
+            <property name="stack">SelectModeStack</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSeparator">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkStack" id="SelectModeStack">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="border-width">5</property>
+            <property name="transition-type">slide-left-right</property>
+            <child>
+              <object class="GtkViewport">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="margin-start">30</property>
+                <property name="margin-end">30</property>
+                <property name="shadow-type">none</property>
+                <child>
+                  <object class="GtkBox">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="valign">center</property>
+                    <property name="border-width">10</property>
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">10</property>
+                    <child>
+                      <object class="GtkBox" id="ConnectToServerAuthorizationTypeBox">
+                        <property name="can-focus">False</property>
+                        <child>
+                          <object class="GtkLabel" id="ConnectToServerAuthorizationTypeLabel">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="halign">start</property>
+                            <property name="label" translatable="yes">Вид авторизации</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkComboBox" id="ConnectToServerAuthorizationTypeComboBox">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="model">ClientAuthorizationTypeListStore</property>
+                            <child>
+                              <object class="GtkCellRendererText"/>
+                              <attributes>
+                                <attribute name="text">0</attribute>
+                              </attributes>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="label" translatable="yes">Авторизация</property>
+                        <attributes>
+                          <attribute name="font-desc" value="Sans 16"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkSeparator">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="spacing">35</property>
+                        <property name="homogeneous">True</property>
+                        <child>
+                          <object class="GtkLabel" id="ConnectToServerURLLabel">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="halign">start</property>
+                            <property name="label" translatable="yes">Адрес сервера</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkEntry" id="ConnectToServerURLEntry">
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="valign">end</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="spacing">35</property>
+                        <property name="homogeneous">True</property>
+                        <child>
+                          <object class="GtkLabel" id="ConnectToServerPortLabel">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="halign">start</property>
+                            <property name="label" translatable="yes">Порт</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkEntry" id="ConnectToServerPortEntry">
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="valign">end</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">4</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="spacing">35</property>
+                        <property name="homogeneous">True</property>
+                        <child>
+                          <object class="GtkLabel" id="ConnectToServerLoginLabel">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="halign">start</property>
+                            <property name="label" translatable="yes">Логин</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkEntry" id="ConnectToServerLoginEntry">
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">5</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="valign">center</property>
+                        <property name="spacing">35</property>
+                        <property name="homogeneous">True</property>
+                        <child>
+                          <object class="GtkLabel" id="ConnectToServerPasswordLabel">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="halign">start</property>
+                            <property name="label" translatable="yes">Пароль</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkEntry" id="ConnectToServerPasswordEntry">
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="buffer">ConnectToServerPasswordBuffer</property>
+                            <property name="visibility">False</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">6</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="can-focus">False</property>
+                        <property name="halign">center</property>
+                        <property name="spacing">35</property>
+                        <child>
+                          <object class="GtkLabel" id="ConnectToServerEncryptLabel">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="label" translatable="yes">Шифрование</property>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkCheckButton" id="ConnectToServerEncryptCheckButton">
+                            <property name="label" translatable="yes"> </property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="receives-default">False</property>
+                            <property name="draw-indicator">True</property>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">7</property>
+                      </packing>
+                    </child>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="name">ConnectToServer</property>
+                <property name="title" translatable="yes">Подключение к серверу</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkViewport">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="margin-start">30</property>
+                <property name="margin-end">30</property>
+                <property name="shadow-type">none</property>
+                <child>
+                  <object class="GtkBox">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">5</property>
+                    <child>
+                      <object class="GtkStackSwitcher" id="DataStorageTypeStackSwitcher">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="homogeneous">True</property>
+                        <property name="stack">DataStorageTypeStack</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkStack" id="DataStorageTypeStack">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <child>
+                          <object class="GtkScrolledWindow">
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <child>
+                              <object class="GtkViewport">
+                                <property name="visible">True</property>
+                                <property name="can-focus">False</property>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="visible">True</property>
+                                    <property name="can-focus">False</property>
+                                    <property name="border-width">10</property>
+                                    <property name="orientation">vertical</property>
+                                    <property name="spacing">5</property>
+                                    <child>
+                                      <object class="GtkBox">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                        <property name="spacing">35</property>
+                                        <child>
+                                          <object class="GtkLabel" id="ConnectToDatabaseNetworkDataBaseLabel">
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">False</property>
+                                            <property name="halign">start</property>
+                                            <property name="label" translatable="yes">База данных</property>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">True</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">0</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <object class="GtkComboBox" id="ConnectToDatabaseNetworkDataBaseComboBox">
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">False</property>
+                                            <property name="model">ConnectToDatabaseNetworkDatabasesListStore</property>
+                                            <property name="id-column">0</property>
+                                            <child>
+                                              <object class="GtkCellRendererText"/>
+                                              <attributes>
+                                                <attribute name="text">0</attribute>
+                                              </attributes>
+                                            </child>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">True</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">1</property>
+                                          </packing>
+                                        </child>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkSeparator">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkLabel">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                        <property name="label" translatable="yes">Авторизация</property>
+                                        <attributes>
+                                          <attribute name="font-desc" value="Sans 16"/>
+                                        </attributes>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">2</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkSeparator">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">3</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkBox">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                        <property name="spacing">35</property>
+                                        <property name="homogeneous">True</property>
+                                        <child>
+                                          <object class="GtkLabel" id="ConnectToDatabaseURLLabel">
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">False</property>
+                                            <property name="halign">start</property>
+                                            <property name="label" translatable="yes">Адрес сервера</property>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">True</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">0</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <object class="GtkEntry" id="ConnectToDatabaseURLEntry">
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">True</property>
+                                            <property name="valign">end</property>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">True</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">1</property>
+                                          </packing>
+                                        </child>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">4</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkBox">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                        <property name="spacing">35</property>
+                                        <property name="homogeneous">True</property>
+                                        <child>
+                                          <object class="GtkLabel" id="ConnectToDatabasePortLabel">
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">False</property>
+                                            <property name="halign">start</property>
+                                            <property name="label" translatable="yes">Порт</property>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">True</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">0</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <object class="GtkEntry" id="ConnectToDatabasePortEntry">
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">True</property>
+                                            <property name="input-purpose">digits</property>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">1</property>
+                                          </packing>
+                                        </child>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">5</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkBox">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                        <property name="spacing">35</property>
+                                        <property name="homogeneous">True</property>
+                                        <child>
+                                          <object class="GtkLabel" id="ConnectToDatabaseDatabaseNameLabel">
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">False</property>
+                                            <property name="halign">start</property>
+                                            <property name="label" translatable="yes">База данных</property>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">0</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <object class="GtkEntry" id="ConnectToDatabaseDatabaseNameEntry">
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">True</property>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">1</property>
+                                          </packing>
+                                        </child>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">6</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkBox">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                        <property name="spacing">35</property>
+                                        <property name="homogeneous">True</property>
+                                        <child>
+                                          <object class="GtkLabel" id="ConnectToDatabaseLoginLabel">
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">False</property>
+                                            <property name="halign">start</property>
+                                            <property name="label" translatable="yes">Логин</property>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">True</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">0</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <object class="GtkEntry" id="ConnectToDatabaseLoginEntry">
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">True</property>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">True</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">1</property>
+                                          </packing>
+                                        </child>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">7</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkBox">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                        <property name="valign">center</property>
+                                        <property name="spacing">35</property>
+                                        <property name="homogeneous">True</property>
+                                        <child>
+                                          <object class="GtkLabel" id="ConnectToDatabasePasswordLabel">
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">False</property>
+                                            <property name="halign">start</property>
+                                            <property name="label" translatable="yes">Пароль</property>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">True</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">0</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <object class="GtkEntry" id="ConnectToDatabasePasswordEntry">
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">True</property>
+                                            <property name="buffer">ConnectToDatabasePasswordBuffer</property>
+                                            <property name="visibility">False</property>
+                                            <property name="invisible-char">●</property>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">True</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">1</property>
+                                          </packing>
+                                        </child>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">8</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkSeparator">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">11</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="name">NetworkDB</property>
+                            <property name="title" translatable="yes">Сетевая база данных</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkScrolledWindow">
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="hscrollbar-policy">never</property>
+                            <child>
+                              <object class="GtkViewport">
+                                <property name="visible">True</property>
+                                <property name="can-focus">False</property>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="visible">True</property>
+                                    <property name="can-focus">False</property>
+                                    <property name="halign">center</property>
+                                    <property name="valign">center</property>
+                                    <property name="border-width">10</property>
+                                    <property name="orientation">vertical</property>
+                                    <property name="spacing">10</property>
+                                    <child>
+                                      <object class="GtkBox">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                        <property name="spacing">35</property>
+                                        <child>
+                                          <object class="GtkLabel" id="ConnectToDatabaseLocalDataBaseLabel">
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">False</property>
+                                            <property name="halign">start</property>
+                                            <property name="label" translatable="yes">База данных</property>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">True</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">0</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <object class="GtkComboBox" id="ConnectToDatabaseLocalDataBaseComboBox">
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">False</property>
+                                            <property name="model">ConnectToDatabaseLocalDatabasesListStore</property>
+                                            <property name="id-column">0</property>
+                                            <child>
+                                              <object class="GtkCellRendererText"/>
+                                              <attributes>
+                                                <attribute name="text">0</attribute>
+                                              </attributes>
+                                            </child>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">True</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">1</property>
+                                          </packing>
+                                        </child>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkSeparator">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkLabel">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                        <property name="label" translatable="yes">Подключение</property>
+                                        <attributes>
+                                          <attribute name="font-desc" value="Sans 16"/>
+                                        </attributes>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">2</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkSeparator">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">3</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkBox">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                        <property name="spacing">16</property>
+                                        <child>
+                                          <object class="GtkLabel" id="ConnectToDatabasePathToFolderLabel">
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">False</property>
+                                            <property name="halign">start</property>
+                                            <property name="label" translatable="yes">Путь к папке с базами</property>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">True</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">0</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <object class="GtkEntry" id="ConnectToDatabasePathToFolderEntry">
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">True</property>
+                                            <property name="valign">end</property>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">True</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">1</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <object class="GtkButton" id="ConnectToDatabasePathToFolderButton">
+                                            <property name="label" translatable="yes">Обзор</property>
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">True</property>
+                                            <property name="receives-default">True</property>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">2</property>
+                                          </packing>
+                                        </child>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">4</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkStack" id="LocalDatabaseCasesStack">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                        <child>
+                                          <object class="GtkBox">
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">False</property>
+                                            <property name="spacing">10</property>
+                                            <child>
+                                              <object class="GtkLabel" id="ConnectToDatabaseNameLocalDatabaseLabel">
+                                                <property name="visible">True</property>
+                                                <property name="can-focus">False</property>
+                                                <property name="label" translatable="yes">Базы 
+данных</property>
+                                              </object>
+                                              <packing>
+                                                <property name="expand">False</property>
+                                                <property name="fill">True</property>
+                                                <property name="position">0</property>
+                                              </packing>
+                                            </child>
+                                            <child>
+                                              <object class="GtkComboBox" id="ConnectToDatabaseSelectLocalDatabaseCombobox">
+                                                <property name="visible">True</property>
+                                                <property name="can-focus">False</property>
+                                                <property name="id-column">0</property>
+                                                <child>
+                                                  <object class="GtkCellRendererText">
+                                                    <property name="ellipsize">end</property>
+                                                  </object>
+                                                  <attributes>
+                                                    <attribute name="text">0</attribute>
+                                                  </attributes>
+                                                </child>
+                                              </object>
+                                              <packing>
+                                                <property name="expand">True</property>
+                                                <property name="fill">True</property>
+                                                <property name="position">1</property>
+                                              </packing>
+                                            </child>
+                                            <child>
+                                              <object class="GtkBox">
+                                                <property name="visible">True</property>
+                                                <property name="can-focus">False</property>
+                                                <child>
+                                                  <object class="GtkBox">
+                                                    <property name="visible">True</property>
+                                                    <property name="can-focus">False</property>
+                                                    <property name="spacing">5</property>
+                                                    <child>
+                                                      <object class="GtkButton" id="ConnectToDatabaseCreateLocalDatabaseButton">
+                                                        <property name="label" translatable="yes">Создать</property>
+                                                        <property name="visible">True</property>
+                                                        <property name="can-focus">True</property>
+                                                        <property name="receives-default">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="expand">False</property>
+                                                        <property name="fill">True</property>
+                                                        <property name="position">0</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkButton" id="LocalDatabaseRefreshButton">
+                                                        <property name="visible">True</property>
+                                                        <property name="can-focus">True</property>
+                                                        <property name="receives-default">True</property>
+                                                        <property name="tooltip-text" translatable="yes">Обновить список баз данных</property>
+                                                        <property name="image">image1</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="expand">False</property>
+                                                        <property name="fill">True</property>
+                                                        <property name="position">1</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkButton" id="LocalDatabaseRemoveButton">
+                                                        <property name="visible">True</property>
+                                                        <property name="can-focus">True</property>
+                                                        <property name="receives-default">True</property>
+                                                        <property name="tooltip-text" translatable="yes">Удалить базу</property>
+                                                        <property name="margin-start">10</property>
+                                                        <property name="image">image2</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="expand">False</property>
+                                                        <property name="fill">True</property>
+                                                        <property name="position">2</property>
+                                                      </packing>
+                                                    </child>
+                                                  </object>
+                                                  <packing>
+                                                    <property name="expand">False</property>
+                                                    <property name="fill">True</property>
+                                                    <property name="position">0</property>
+                                                  </packing>
+                                                </child>
+                                              </object>
+                                              <packing>
+                                                <property name="expand">False</property>
+                                                <property name="fill">True</property>
+                                                <property name="position">2</property>
+                                              </packing>
+                                            </child>
+                                          </object>
+                                          <packing>
+                                            <property name="name">SelectDatabase</property>
+                                            <property name="title" translatable="yes">page0</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <object class="GtkBox">
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">False</property>
+                                            <property name="spacing">10</property>
+                                            <child>
+                                              <object class="GtkStack" id="LocalDatabaseSelectDatabaseStack">
+                                                <property name="visible">True</property>
+                                                <property name="can-focus">False</property>
+                                                <child>
+                                                  <object class="GtkEntry" id="LocalDatabaseCreateEntry">
+                                                    <property name="visible">True</property>
+                                                    <property name="can-focus">True</property>
+                                                    <property name="placeholder-text" translatable="yes">Введите имя новой базы</property>
+                                                  </object>
+                                                  <packing>
+                                                    <property name="name">page0</property>
+                                                    <property name="title" translatable="yes">page0</property>
+                                                  </packing>
+                                                </child>
+                                              </object>
+                                              <packing>
+                                                <property name="expand">True</property>
+                                                <property name="fill">True</property>
+                                                <property name="position">0</property>
+                                              </packing>
+                                            </child>
+                                            <child>
+                                              <object class="GtkBox">
+                                                <property name="visible">True</property>
+                                                <property name="can-focus">False</property>
+                                                <property name="spacing">5</property>
+                                                <child>
+                                                  <object class="GtkButton" id="LocalDatabaseApplyCreationButton">
+                                                    <property name="visible">True</property>
+                                                    <property name="can-focus">True</property>
+                                                    <property name="receives-default">True</property>
+                                                    <property name="image">CreateImage</property>
+                                                  </object>
+                                                  <packing>
+                                                    <property name="expand">False</property>
+                                                    <property name="fill">True</property>
+                                                    <property name="position">0</property>
+                                                  </packing>
+                                                </child>
+                                                <child>
+                                                  <object class="GtkButton" id="LocalDatabaseCancelCreationButton">
+                                                    <property name="visible">True</property>
+                                                    <property name="can-focus">True</property>
+                                                    <property name="receives-default">True</property>
+                                                    <property name="image">CancelImage</property>
+                                                  </object>
+                                                  <packing>
+                                                    <property name="expand">False</property>
+                                                    <property name="fill">True</property>
+                                                    <property name="position">1</property>
+                                                  </packing>
+                                                </child>
+                                              </object>
+                                              <packing>
+                                                <property name="expand">False</property>
+                                                <property name="fill">True</property>
+                                                <property name="position">1</property>
+                                              </packing>
+                                            </child>
+                                          </object>
+                                          <packing>
+                                            <property name="name">CreateDatabase</property>
+                                            <property name="title" translatable="yes">page0</property>
+                                            <property name="position">1</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <object class="GtkBox">
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">False</property>
+                                            <property name="spacing">10</property>
+                                            <child>
+                                              <object class="GtkLabel" id="LocalDatabaseRemoveLabel">
+                                                <property name="visible">True</property>
+                                                <property name="can-focus">False</property>
+                                                <property name="wrap">True</property>
+                                                <property name="wrap-mode">word-char</property>
+                                                <property name="lines">2</property>
+                                              </object>
+                                              <packing>
+                                                <property name="expand">True</property>
+                                                <property name="fill">True</property>
+                                                <property name="position">0</property>
+                                              </packing>
+                                            </child>
+                                            <child>
+                                              <object class="GtkBox">
+                                                <property name="visible">True</property>
+                                                <property name="can-focus">False</property>
+                                                <property name="valign">center</property>
+                                                <property name="spacing">5</property>
+                                                <child>
+                                                  <object class="GtkButton" id="LocalDatabaseApplyRemovingButton">
+                                                    <property name="visible">True</property>
+                                                    <property name="can-focus">True</property>
+                                                    <property name="receives-default">True</property>
+                                                    <property name="image">CreateImage1</property>
+                                                  </object>
+                                                  <packing>
+                                                    <property name="expand">False</property>
+                                                    <property name="fill">True</property>
+                                                    <property name="position">0</property>
+                                                  </packing>
+                                                </child>
+                                                <child>
+                                                  <object class="GtkButton" id="LocalDatabaseCancelRemovingButton">
+                                                    <property name="visible">True</property>
+                                                    <property name="can-focus">True</property>
+                                                    <property name="receives-default">True</property>
+                                                    <property name="image">CancelImage1</property>
+                                                  </object>
+                                                  <packing>
+                                                    <property name="expand">False</property>
+                                                    <property name="fill">True</property>
+                                                    <property name="position">1</property>
+                                                  </packing>
+                                                </child>
+                                              </object>
+                                              <packing>
+                                                <property name="expand">False</property>
+                                                <property name="fill">False</property>
+                                                <property name="position">1</property>
+                                              </packing>
+                                            </child>
+                                          </object>
+                                          <packing>
+                                            <property name="name">RemoveDatabase</property>
+                                            <property name="title" translatable="yes">page1</property>
+                                            <property name="position">2</property>
+                                          </packing>
+                                        </child>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">5</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkSeparator">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">11</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="name">LocalDB</property>
+                            <property name="title" translatable="yes">Локальная база данных</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="name">ConnectToDatabase</property>
+                <property name="title" translatable="yes">Подключение к базе данных</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="orientation">vertical</property>
+            <property name="spacing">10</property>
+            <child>
+              <object class="GtkCheckButton" id="SaveConfigCheckButton">
+                <property name="label" translatable="yes">Сохранить данные авторизации</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">False</property>
+                <property name="halign">center</property>
+                <property name="draw-indicator">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="AutoLOginCheckButton">
+                <property name="label" translatable="yes">Выполнять вход автоматически</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">False</property>
+                <property name="halign">center</property>
+                <property name="draw-indicator">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">4</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkRevealer" id="ErrorReleaver">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="transition-type">slide-up</property>
+            <property name="reveal-child">True</property>
+            <child>
+              <object class="GtkLabel" id="ErrorLabel">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="xpad">10</property>
+                <property name="ypad">0</property>
+                <property name="wrap">True</property>
+                <property name="selectable">True</property>
+                <attributes>
+                  <attribute name="foreground" value="#e0e01b1b2424"/>
+                </attributes>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">5</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="StartConnectionButton">
+            <property name="label" translatable="yes">Подключиться</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="halign">center</property>
+            <property name="border-width">10</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">6</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="border-width">2</property>
+            <property name="spacing">5</property>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">Версия</property>
+                <attributes>
+                  <attribute name="font-desc" value="Sans 7"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="VersionLabel">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <attributes>
+                  <attribute name="font-desc" value="Sans 7"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">7</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

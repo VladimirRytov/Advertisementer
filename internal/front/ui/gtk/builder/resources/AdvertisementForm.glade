@@ -1,0 +1,1850 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.40.0 -->
+<interface>
+  <requires lib="gtk+" version="3.24"/>
+  <object class="GtkListStore" id="BlockReleaseDatesListStore">
+    <columns>
+      <!-- column-name releaseDate -->
+      <column type="gchararray"/>
+    </columns>
+  </object>
+  <object class="GtkPopover" id="BlockSetReleaseDatePopover">
+    <property name="can-focus">False</property>
+    <property name="constrain-to">none</property>
+    <child>
+      <object class="GtkBox">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="border-width">5</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">10</property>
+        <child>
+          <object class="GtkCalendar" id="BlockSetReleaseDateCalendar">
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="year">2023</property>
+            <property name="month">8</property>
+            <property name="day">2</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="spacing">10</property>
+            <property name="homogeneous">True</property>
+            <child>
+              <object class="GtkButton" id="BlockDeleteReleaseDateButton">
+                <property name="label" translatable="yes">Удалить</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="BlockAddReleaseDateButton">
+                <property name="label" translatable="yes">Добавить</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkTextBuffer" id="BlockTextBuffer"/>
+  <object class="GtkBox" id="AddBlockAdvertisementBox">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="margin-left">10</property>
+    <property name="margin-right">5</property>
+    <property name="margin-start">10</property>
+    <property name="margin-end">5</property>
+    <property name="margin-top">10</property>
+    <property name="margin-bottom">10</property>
+    <property name="orientation">vertical</property>
+    <property name="spacing">15</property>
+    <child>
+      <object class="GtkBox" id="BlockIdBox">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="halign">center</property>
+        <property name="spacing">15</property>
+        <child>
+          <object class="GtkLabel" id="BlockIDLabel">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="halign">start</property>
+            <property name="label" translatable="yes">Номер Объявления</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans, 14"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="BlockIDEntry">
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="halign">end</property>
+            <property name="editable">False</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">False</property>
+        <property name="padding">10</property>
+        <property name="position">0</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">1</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkBox" id="BlockOrderSelectorBox">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="margin-left">30</property>
+        <property name="margin-right">30</property>
+        <property name="margin-start">30</property>
+        <property name="margin-end">30</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">15</property>
+        <child>
+          <object class="GtkLabel" id="BlockOrderLabel">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="halign">center</property>
+            <property name="label" translatable="yes">Номер заказа</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans 14"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow">
+            <property name="height-request">200</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="shadow-type">in</property>
+            <child>
+              <object class="GtkTreeView" id="BlockOrderTreeView">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="search-column">0</property>
+                <property name="enable-grid-lines">both</property>
+                <child internal-child="selection">
+                  <object class="GtkTreeSelection"/>
+                </child>
+                <child>
+                  <object class="GtkTreeViewColumn">
+                    <child>
+                      <object class="GtkCellRendererToggle" id="BlockSelectedOrderToggle">
+                        <property name="radio">True</property>
+                      </object>
+                      <attributes>
+                        <attribute name="active">0</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkTreeViewColumn">
+                    <property name="sizing">autosize</property>
+                    <property name="title" translatable="yes">№ заказа</property>
+                    <child>
+                      <object class="GtkCellRendererText"/>
+                      <attributes>
+                        <attribute name="text">1</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkTreeViewColumn">
+                    <property name="resizable">True</property>
+                    <property name="min-width">40</property>
+                    <property name="title" translatable="yes">Контрагент</property>
+                    <property name="expand">True</property>
+                    <child>
+                      <object class="GtkCellRendererText">
+                        <property name="ellipsize">end</property>
+                      </object>
+                      <attributes>
+                        <attribute name="text">2</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkTreeViewColumn">
+                    <property name="sizing">fixed</property>
+                    <property name="title" translatable="yes">Статус оплаты</property>
+                    <child>
+                      <object class="GtkCellRendererToggle">
+                        <property name="sensitive">False</property>
+                        <property name="activatable">False</property>
+                      </object>
+                      <attributes>
+                        <attribute name="active">6</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSeparator">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">True</property>
+        <property name="fill">True</property>
+        <property name="position">2</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="margin-left">10</property>
+        <property name="margin-right">10</property>
+        <property name="margin-start">10</property>
+        <property name="margin-end">10</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkBox">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="margin-left">30</property>
+            <property name="margin-right">30</property>
+            <property name="margin-start">30</property>
+            <property name="margin-end">30</property>
+            <property name="homogeneous">True</property>
+            <child>
+              <object class="GtkLabel" id="BlockSezeLabel">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="halign">start</property>
+                <property name="label" translatable="yes">Площадь</property>
+                <attributes>
+                  <attribute name="font-desc" value="Sans 14"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="BlockSizeEntry">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="halign">start</property>
+                <property name="primary-icon-activatable">False</property>
+                <property name="primary-icon-sensitive">False</property>
+                <property name="input-purpose">digits</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="BlockErrorSizeLabel">
+            <property name="can-focus">False</property>
+            <property name="halign">center</property>
+            <property name="label" translatable="yes">err</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">3</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">4</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="margin-left">30</property>
+        <property name="margin-right">30</property>
+        <property name="margin-start">30</property>
+        <property name="margin-end">30</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">10</property>
+        <child>
+          <object class="GtkBox">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="halign">center</property>
+            <property name="spacing">23</property>
+            <child>
+              <object class="GtkLabel" id="BlockReleaseDatesLabel">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="halign">center</property>
+                <property name="label" translatable="yes">Дни выхода</property>
+                <attributes>
+                  <attribute name="font-desc" value="Sans, 14"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkMenuButton" id="BlockReleaseDateMenuButton">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="focus-on-click">False</property>
+                <property name="receives-default">True</property>
+                <property name="popover">BlockSetReleaseDatePopover</property>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Изменить</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow">
+            <property name="height-request">200</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="hscrollbar-policy">never</property>
+            <property name="shadow-type">in</property>
+            <child>
+              <object class="GtkTreeView" id="BlockReleaseDatesTreeView">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="model">BlockReleaseDatesListStore</property>
+                <property name="search-column">0</property>
+                <property name="enable-grid-lines">both</property>
+                <child internal-child="selection">
+                  <object class="GtkTreeSelection"/>
+                </child>
+                <child>
+                  <object class="GtkTreeViewColumn">
+                    <property name="title" translatable="yes">День выхода</property>
+                    <property name="clickable">True</property>
+                    <property name="sort-indicator">True</property>
+                    <property name="sort-order">descending</property>
+                    <property name="sort-column-id">0</property>
+                    <child>
+                      <object class="GtkCellRendererText"/>
+                      <attributes>
+                        <attribute name="text">0</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">5</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">6</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="margin-left">30</property>
+        <property name="margin-right">30</property>
+        <property name="margin-start">30</property>
+        <property name="margin-end">30</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">5</property>
+        <child>
+          <object class="GtkBox">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="spacing">30</property>
+            <child>
+              <object class="GtkLabel" id="BlockReleaseCountsLabel">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="halign">start</property>
+                <property name="label" translatable="yes">Количество выходов</property>
+                <attributes>
+                  <attribute name="font-desc" value="Sans 14"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="BlockReleaseCountsEntry">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="editable">False</property>
+                <property name="width-chars">5</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="BlockErrorReleaseCountLabel">
+            <property name="can-focus">False</property>
+            <property name="halign">center</property>
+            <property name="label" translatable="yes">label</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">7</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">8</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="margin-left">30</property>
+        <property name="margin-right">30</property>
+        <property name="margin-start">30</property>
+        <property name="margin-end">30</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">10</property>
+        <child>
+          <object class="GtkBox">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="orientation">vertical</property>
+            <property name="spacing">5</property>
+            <child>
+              <object class="GtkLabel" id="BlockTagsLabel">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="halign">center</property>
+                <property name="label" translatable="yes">Тэги</property>
+                <attributes>
+                  <attribute name="font-desc" value="Sans 14"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkScrolledWindow">
+                <property name="height-request">150</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="shadow-type">in</property>
+                <child>
+                  <object class="GtkTreeView" id="BlockTagSelectorTreeView">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="search-column">0</property>
+                    <child internal-child="selection">
+                      <object class="GtkTreeSelection"/>
+                    </child>
+                    <child>
+                      <object class="GtkTreeViewColumn">
+                        <property name="clickable">True</property>
+                        <property name="sort-column-id">0</property>
+                        <child>
+                          <object class="GtkCellRendererToggle" id="BlockSelectedTagSwitcher"/>
+                          <attributes>
+                            <attribute name="active">0</attribute>
+                          </attributes>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkTreeViewColumn">
+                        <property name="title" translatable="yes">Тэг</property>
+                        <property name="expand">True</property>
+                        <property name="sort-column-id">1</property>
+                        <child>
+                          <object class="GtkCellRendererText"/>
+                          <attributes>
+                            <attribute name="text">1</attribute>
+                          </attributes>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkTreeViewColumn">
+                        <property name="title" translatable="yes">Цена</property>
+                        <property name="sort-column-id">2</property>
+                        <child>
+                          <object class="GtkCellRendererText"/>
+                          <attributes>
+                            <attribute name="text">2</attribute>
+                          </attributes>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSeparator">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="orientation">vertical</property>
+            <property name="spacing">5</property>
+            <property name="baseline-position">top</property>
+            <child>
+              <object class="GtkLabel" id="BlockCostRateMultiplayerLabel">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="halign">center</property>
+                <property name="label" translatable="yes">Множитель цены</property>
+                <attributes>
+                  <attribute name="font-desc" value="Sans 14"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkScrolledWindow">
+                <property name="height-request">150</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="shadow-type">in</property>
+                <child>
+                  <object class="GtkTreeView" id="BlockExtraChargeSelectorTreeView">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="search-column">0</property>
+                    <child internal-child="selection">
+                      <object class="GtkTreeSelection"/>
+                    </child>
+                    <child>
+                      <object class="GtkTreeViewColumn">
+                        <property name="sort-column-id">0</property>
+                        <child>
+                          <object class="GtkCellRendererToggle" id="BlockSelectedExtraChargeSwitcher"/>
+                          <attributes>
+                            <attribute name="active">0</attribute>
+                          </attributes>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkTreeViewColumn">
+                        <property name="title" translatable="yes">Наценка</property>
+                        <property name="expand">True</property>
+                        <property name="sort-column-id">1</property>
+                        <child>
+                          <object class="GtkCellRendererText"/>
+                          <attributes>
+                            <attribute name="text">1</attribute>
+                          </attributes>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkTreeViewColumn">
+                        <property name="title" translatable="yes">Множитель, %</property>
+                        <property name="sort-column-id">2</property>
+                        <child>
+                          <object class="GtkCellRendererText"/>
+                          <attributes>
+                            <attribute name="text">2</attribute>
+                          </attributes>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">9</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">10</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="margin-left">30</property>
+        <property name="margin-right">30</property>
+        <property name="margin-start">30</property>
+        <property name="margin-end">30</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkBox">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="spacing">20</property>
+            <child>
+              <object class="GtkLabel" id="BlockTotalPaymentLabel">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">Стоимость</property>
+                <attributes>
+                  <attribute name="font-desc" value="Sans, 14"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="BlockTotalPaymentEntry">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="width-chars">10</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="CalculateCostBlockAdvertisementButton">
+                <property name="label" translatable="yes">Посчитать</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="BlockErrorCostLabel">
+            <property name="can-focus">False</property>
+            <property name="halign">center</property>
+            <property name="label" translatable="yes">label</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">11</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">12</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="margin-left">30</property>
+        <property name="margin-right">30</property>
+        <property name="margin-start">30</property>
+        <property name="margin-end">30</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">10</property>
+        <child>
+          <object class="GtkLabel" id="BlockFileLabel">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Файл</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans, 14"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox" id="FileNameBox">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <child>
+              <placeholder/>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">13</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">14</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="margin-left">30</property>
+        <property name="margin-right">30</property>
+        <property name="margin-start">30</property>
+        <property name="margin-end">30</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">5</property>
+        <child>
+          <object class="GtkLabel" id="BlockCommentLabel">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Комментарий</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans, 14"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow">
+            <property name="height-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="margin-left">10</property>
+            <property name="margin-right">10</property>
+            <property name="margin-start">10</property>
+            <property name="margin-end">10</property>
+            <property name="shadow-type">in</property>
+            <child>
+              <object class="GtkTextView" id="BlockCommentTextView">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="wrap-mode">word</property>
+                <property name="buffer">BlockTextBuffer</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">True</property>
+        <property name="fill">True</property>
+        <property name="position">15</property>
+      </packing>
+    </child>
+  </object>
+  <object class="GtkListStore" id="LineReleaseDatesListStore">
+    <columns>
+      <!-- column-name releaseDate -->
+      <column type="gchararray"/>
+    </columns>
+  </object>
+  <object class="GtkListStore" id="LineReleaseDatesListStore1">
+    <columns>
+      <!-- column-name releaseDate -->
+      <column type="gchararray"/>
+    </columns>
+  </object>
+  <object class="GtkPopover" id="LineSetReleaseDatePopover">
+    <property name="can-focus">False</property>
+    <property name="constrain-to">none</property>
+    <child>
+      <object class="GtkBox">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="border-width">5</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">10</property>
+        <child>
+          <object class="GtkCalendar" id="LineSetReleaseDateCalendar">
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="year">2023</property>
+            <property name="month">8</property>
+            <property name="day">2</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="spacing">10</property>
+            <property name="homogeneous">True</property>
+            <child>
+              <object class="GtkButton" id="LineDeleteReleaseDateButton">
+                <property name="label" translatable="yes">Удалить</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="LineAddReleaseDateButton">
+                <property name="label" translatable="yes">Добавить</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkTextBuffer" id="LineTextBuffer"/>
+  <object class="GtkBox" id="AddLineAdvertisementBox">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="margin-left">5</property>
+    <property name="margin-right">5</property>
+    <property name="margin-start">5</property>
+    <property name="margin-end">5</property>
+    <property name="margin-top">10</property>
+    <property name="margin-bottom">10</property>
+    <property name="orientation">vertical</property>
+    <property name="spacing">15</property>
+    <child>
+      <object class="GtkBox" id="LineIdBox">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="margin-left">30</property>
+        <property name="margin-right">30</property>
+        <property name="margin-start">30</property>
+        <property name="margin-end">30</property>
+        <property name="spacing">10</property>
+        <child>
+          <object class="GtkLabel" id="LineIDLabel">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="halign">start</property>
+            <property name="label" translatable="yes">Номер объявления</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans, 14"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="LineIDEntry">
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="editable">False</property>
+            <property name="width-chars">10</property>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="padding">10</property>
+        <property name="position">0</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">1</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkBox" id="LineOrderSelectorBox">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="margin-left">30</property>
+        <property name="margin-right">30</property>
+        <property name="margin-start">30</property>
+        <property name="margin-end">30</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">10</property>
+        <child>
+          <object class="GtkLabel" id="LineOrderLabel">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="halign">center</property>
+            <property name="label" translatable="yes">Номер заказа</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans, 14"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow">
+            <property name="height-request">200</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="shadow-type">in</property>
+            <child>
+              <object class="GtkTreeView" id="LineOrderTreeView">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="search-column">0</property>
+                <property name="enable-grid-lines">both</property>
+                <child internal-child="selection">
+                  <object class="GtkTreeSelection"/>
+                </child>
+                <child>
+                  <object class="GtkTreeViewColumn">
+                    <child>
+                      <object class="GtkCellRendererToggle" id="LineSelectedOrderToggle">
+                        <property name="radio">True</property>
+                      </object>
+                      <attributes>
+                        <attribute name="active">0</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkTreeViewColumn">
+                    <property name="sizing">autosize</property>
+                    <property name="title" translatable="yes">№ заказа</property>
+                    <child>
+                      <object class="GtkCellRendererText"/>
+                      <attributes>
+                        <attribute name="text">1</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkTreeViewColumn">
+                    <property name="resizable">True</property>
+                    <property name="min-width">40</property>
+                    <property name="title" translatable="yes">Контрагент</property>
+                    <property name="expand">True</property>
+                    <child>
+                      <object class="GtkCellRendererText">
+                        <property name="ellipsize">end</property>
+                      </object>
+                      <attributes>
+                        <attribute name="text">2</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkTreeViewColumn">
+                    <property name="sizing">fixed</property>
+                    <property name="title" translatable="yes">Статус оплаты</property>
+                    <child>
+                      <object class="GtkCellRendererToggle">
+                        <property name="sensitive">False</property>
+                        <property name="activatable">False</property>
+                      </object>
+                      <attributes>
+                        <attribute name="active">6</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSeparator">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">True</property>
+        <property name="fill">False</property>
+        <property name="padding">10</property>
+        <property name="position">2</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="margin-left">30</property>
+        <property name="margin-right">30</property>
+        <property name="margin-start">30</property>
+        <property name="margin-end">30</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">10</property>
+        <child>
+          <object class="GtkBox">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="halign">center</property>
+            <property name="spacing">20</property>
+            <child>
+              <object class="GtkLabel" id="LineReleaseDatesLabel">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="halign">center</property>
+                <property name="label" translatable="yes">Дни выхода</property>
+                <attributes>
+                  <attribute name="font-desc" value="Sans, 14"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkMenuButton" id="LineReleaseDatesMenuButton">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="focus-on-click">False</property>
+                <property name="receives-default">True</property>
+                <property name="popover">LineSetReleaseDatePopover</property>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Изменить</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow">
+            <property name="height-request">200</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="shadow-type">in</property>
+            <child>
+              <object class="GtkTreeView" id="LineReleaseDatesTreeView">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="model">LineReleaseDatesListStore</property>
+                <property name="search-column">0</property>
+                <property name="enable-grid-lines">both</property>
+                <child internal-child="selection">
+                  <object class="GtkTreeSelection"/>
+                </child>
+                <child>
+                  <object class="GtkTreeViewColumn">
+                    <property name="title" translatable="yes">Дата выхода</property>
+                    <property name="clickable">True</property>
+                    <property name="sort-indicator">True</property>
+                    <property name="sort-order">descending</property>
+                    <property name="sort-column-id">0</property>
+                    <child>
+                      <object class="GtkCellRendererText"/>
+                      <attributes>
+                        <attribute name="text">0</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">4</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">5</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="margin-left">30</property>
+        <property name="margin-right">30</property>
+        <property name="margin-start">30</property>
+        <property name="margin-end">30</property>
+        <property name="spacing">10</property>
+        <child>
+          <object class="GtkLabel" id="LineReleaseCountsLabel">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="halign">start</property>
+            <property name="label" translatable="yes">Количество выходов</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans, 14"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="LineReleaseCountsEntry">
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="valign">start</property>
+            <property name="editable">False</property>
+            <property name="width-chars">10</property>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">6</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkLabel" id="LineReleaseCountErrorLabel">
+        <property name="can-focus">False</property>
+        <property name="label" translatable="yes">label</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">7</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">8</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="margin-left">30</property>
+        <property name="margin-right">30</property>
+        <property name="margin-start">30</property>
+        <property name="margin-end">30</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">15</property>
+        <child>
+          <object class="GtkBox">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="orientation">vertical</property>
+            <property name="spacing">5</property>
+            <child>
+              <object class="GtkLabel" id="LineTagsLabel">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="halign">center</property>
+                <property name="label" translatable="yes">Тэги</property>
+                <attributes>
+                  <attribute name="font-desc" value="Sans, 14"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkScrolledWindow">
+                <property name="height-request">150</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="hscrollbar-policy">never</property>
+                <property name="shadow-type">in</property>
+                <child>
+                  <object class="GtkTreeView" id="LineTagSelectorTreeView">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="search-column">0</property>
+                    <child internal-child="selection">
+                      <object class="GtkTreeSelection"/>
+                    </child>
+                    <child>
+                      <object class="GtkTreeViewColumn">
+                        <property name="sizing">autosize</property>
+                        <property name="sort-column-id">0</property>
+                        <child>
+                          <object class="GtkCellRendererToggle" id="LineSelectedTagSwitcher"/>
+                          <attributes>
+                            <attribute name="active">0</attribute>
+                          </attributes>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkTreeViewColumn">
+                        <property name="sizing">autosize</property>
+                        <property name="title" translatable="yes">Тэг</property>
+                        <property name="expand">True</property>
+                        <property name="sort-column-id">1</property>
+                        <child>
+                          <object class="GtkCellRendererText"/>
+                          <attributes>
+                            <attribute name="text">1</attribute>
+                          </attributes>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkTreeViewColumn">
+                        <property name="sizing">autosize</property>
+                        <property name="title" translatable="yes">Стоимость</property>
+                        <property name="sort-column-id">2</property>
+                        <child>
+                          <object class="GtkCellRendererText"/>
+                          <attributes>
+                            <attribute name="text">2</attribute>
+                          </attributes>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSeparator">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="orientation">vertical</property>
+            <property name="spacing">5</property>
+            <property name="baseline-position">top</property>
+            <child>
+              <object class="GtkLabel" id="LineCostRateMultiplayerLabel">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="halign">center</property>
+                <property name="label" translatable="yes">Множитель цены</property>
+                <attributes>
+                  <attribute name="font-desc" value="Sans, 14"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkScrolledWindow">
+                <property name="height-request">150</property>
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="shadow-type">in</property>
+                <child>
+                  <object class="GtkTreeView" id="LineExtraChargeSelectorTreeView">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="search-column">0</property>
+                    <child internal-child="selection">
+                      <object class="GtkTreeSelection"/>
+                    </child>
+                    <child>
+                      <object class="GtkTreeViewColumn">
+                        <property name="sizing">autosize</property>
+                        <property name="sort-column-id">0</property>
+                        <child>
+                          <object class="GtkCellRendererToggle" id="LineSelectedExtraChargeSwitcher"/>
+                          <attributes>
+                            <attribute name="active">0</attribute>
+                          </attributes>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkTreeViewColumn">
+                        <property name="sizing">autosize</property>
+                        <property name="title" translatable="yes">Наценка</property>
+                        <property name="expand">True</property>
+                        <property name="sort-column-id">1</property>
+                        <child>
+                          <object class="GtkCellRendererText"/>
+                          <attributes>
+                            <attribute name="text">1</attribute>
+                          </attributes>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkTreeViewColumn">
+                        <property name="sizing">autosize</property>
+                        <property name="title" translatable="yes">Множитель, %</property>
+                        <property name="sort-column-id">2</property>
+                        <child>
+                          <object class="GtkCellRendererText"/>
+                          <attributes>
+                            <attribute name="text">2</attribute>
+                          </attributes>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">9</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">10</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="margin-left">30</property>
+        <property name="margin-right">30</property>
+        <property name="margin-start">30</property>
+        <property name="margin-end">30</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">10</property>
+        <child>
+          <object class="GtkLabel" id="LineCommentLabel">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Текст объявления</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans, 14"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow">
+            <property name="height-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="shadow-type">in</property>
+            <child>
+              <object class="GtkTextView" id="LineCommentTextView">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="wrap-mode">word</property>
+                <property name="buffer">LineTextBuffer</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">True</property>
+        <property name="fill">True</property>
+        <property name="position">11</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkSeparator">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">12</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="margin-left">30</property>
+        <property name="margin-right">30</property>
+        <property name="margin-start">30</property>
+        <property name="margin-end">30</property>
+        <property name="spacing">20</property>
+        <child>
+          <object class="GtkLabel" id="LineTotalPaymentLabel">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Стоимость</property>
+            <attributes>
+              <attribute name="font-desc" value="Sans, 14"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="LineTotalPaymentEntry">
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="width-chars">10</property>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="CalculateCostLineAdvertisementButton">
+            <property name="label" translatable="yes">Посчитать</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">13</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkLabel" id="LineCostErrorLabel">
+        <property name="can-focus">False</property>
+        <property name="label" translatable="yes">label</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">14</property>
+      </packing>
+    </child>
+  </object>
+  <object class="GtkBox" id="ThickFileChooser">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="spacing">30</property>
+    <child>
+      <object class="GtkEntry" id="ThickFilePathEntry">
+        <property name="visible">True</property>
+        <property name="can-focus">True</property>
+        <property name="editable">False</property>
+      </object>
+      <packing>
+        <property name="expand">True</property>
+        <property name="fill">True</property>
+        <property name="position">0</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkButton" id="ThickFilePathButton">
+        <property name="label" translatable="yes">Обзор</property>
+        <property name="visible">True</property>
+        <property name="can-focus">True</property>
+        <property name="receives-default">True</property>
+        <property name="halign">end</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">1</property>
+      </packing>
+    </child>
+  </object>
+  <object class="GtkBox" id="ThinFileChooser">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="spacing">30</property>
+    <child>
+      <object class="GtkLinkButton" id="ThinFilePathLink">
+        <property name="label" translatable="yes">file</property>
+        <property name="visible">True</property>
+        <property name="can-focus">True</property>
+        <property name="receives-default">True</property>
+        <property name="relief">none</property>
+      </object>
+      <packing>
+        <property name="expand">True</property>
+        <property name="fill">True</property>
+        <property name="position">0</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkButton" id="ThinFilePathButton">
+        <property name="label" translatable="yes">Обзор</property>
+        <property name="visible">True</property>
+        <property name="can-focus">True</property>
+        <property name="receives-default">True</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">1</property>
+      </packing>
+    </child>
+  </object>
+</interface>

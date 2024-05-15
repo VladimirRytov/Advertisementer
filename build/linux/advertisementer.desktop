@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=1.5
+Name=Advertisementer
+Comment="Advertising Management"
+Comment[ru_RU]="Управление рекламой" 
+Icon=advertisementer
+Exec=advertisementer
+Categories=Office

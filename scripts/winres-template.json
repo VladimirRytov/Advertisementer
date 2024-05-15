@@ -1,0 +1,57 @@
+{
+  "RT_GROUP_ICON": {
+    "APP": {
+      "0000": [
+        "advertising16.png",
+        "advertising32.png",
+        "advertising48.png",
+        "advertising64.png",
+        "advertising128.png",
+        "advertising256.png"
+      ]
+    }
+  },
+  "RT_MANIFEST": {
+    "#1": {
+      "0000": {
+        "identity": {
+          "name": "Advertisementer",
+          "version": "${VERSION}"
+        },
+        "description": "Приложение для работы с рекламными объявлениями",
+        "minimum-os": "win7",
+        "execution-level": "as invoker",
+        "ui-access": false,
+        "auto-elevate": false,
+        "dpi-awareness": "system",
+        "disable-theming": false,
+        "disable-window-filtering": false,
+        "high-resolution-scrolling-aware": false,
+        "ultra-high-resolution-scrolling-aware": false,
+        "long-path-aware": false,
+        "printer-driver-isolation": false,
+        "gdi-scaling": false,
+        "segment-heap": false,
+        "use-common-controls-v6": false
+      }
+    }
+  },
+  "RT_VERSION": {
+    "#1": {
+      "0000": {
+        "fixed": {
+          "file_version": "${VERSION}",
+          "product_version": "${VERSION}"
+        },
+        "info": {
+          "0000": {
+            "FileVersion": "${VERSION}",
+            "LegalCopyright": "Copyright (c) 2024 Vladimir Rytov",
+            "ProductName": "Advertisementer",
+            "ProductVersion": "${VERSION}"
+          }
+        }
+      }
+    }
+  }
+}

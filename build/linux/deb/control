@@ -1,0 +1,8 @@
+Package: advertisementer
+Architecture: amd64
+Maintainer: Vladimir R. <wowa.owa@yandex.ru>
+Version: ${version}-${release}
+BuildNumber: ${buildNumber}
+Installed-Size: ${size}
+Depends: libgtk-3-bin, libcairo2, libglib2.0-bin
+Description: An advertising management package.

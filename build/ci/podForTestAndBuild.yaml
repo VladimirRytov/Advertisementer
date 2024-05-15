@@ -1,0 +1,60 @@
+apiVersion: v1
+kind: Pod
+spec:
+  containers:
+  - name: gtk3-builder
+    image: registry.rytowladimir.ru/gtk3-go-builder
+    env: 
+    - name: CGO_ENABLED
+      value: "1"
+    command:
+    - sleep
+    args:
+    - infinity
+  - name: mysql
+    image: mysql
+    env: 
+    - name: MYSQL_PASSWORD
+      value: gorm_test
+    - name: MYSQL_ROOT_PASSWORD
+      value: gorm_test
+    - name: MYSQL_DATABASE
+      value: gorm_test
+    - name: MYSQL_USER
+      value: gorm_test
+  - name: mssql
+    image: mcr.microsoft.com/mssql/server
+    env:
+    - name: ACCEPT_EULA
+      value: "Y"
+    - name: MSSQL_PID
+      value: Express
+    - name: MSSQL_SA_PASSWORD
+      value: Gorm_Test
+  - name: postgres
+    image: postgres
+    env:
+    - name: POSTGRES_PASSWORD
+      value: gorm_test
+    - name: POSTGRES_USER
+      value: gorm_test
+  - name: debian
+    image: debian
+    command:
+    - sleep
+    args:
+    - infinity
+  - name: fedora
+    image: fedora
+    command:
+    - sleep
+    args:
+    - infinity
+  - name: windows
+    image: suharenis/innosetupcompiler6:1
+    command:
+    - sleep
+    args:
+    - infinity
+  imagePullSecrets:
+  - name: rytowladimir

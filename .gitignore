@@ -1,0 +1,10 @@
+/resources/*#
+*~
+/share/*
+*.dll
+.config
+*.xml
+*.compiled
+*.dtd
+winres/*
+handlers/advreport/gotFiles/Блочные объявления

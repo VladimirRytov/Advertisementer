@@ -1,0 +1,99 @@
+pipeline {
+  agent {
+    kubernetes {
+      yamlFile 'build/ci/podForTestAndBuild.yaml'
+    }
+  }
+  environment {
+    VERSION = sh(
+        returnStdout: true,
+      script: '''
+      if [ $(expr length + "$(git tag --contains)") -ne 0 ]; 
+      then 
+      git tag --contains; 
+      else 
+      echo "0"; 
+      fi
+      ''').trim()
+    
+    VERSION_OR_BUILD_ID = sh(
+      returnStdout: true,
+      script: '''
+      if [ $(expr length + "$(git tag --contains)") -ne 0 ]; 
+      then 
+      git tag --contains; 
+      else 
+      git log --format=%ad.%h -1 --date=format-local:%Y%m%d%H%M; 
+      fi
+      ''').trim()
+    BUILD_NUMBER = sh(
+      returnStdout: true,
+      script: '''
+      git log --format=%ad.%h -1 --date=format-local:%Y%m%d%H%M; 
+      ''').trim()
+
+  }
+  stages {
+    stage('testing package') {
+      steps {
+        container('gtk3-builder') {
+          sh """
+          echo "====> start tests <===="
+          /bin/bash ./scripts/tests.sh
+          """
+        }
+      }
+    } 
+    stage('build') {
+      steps {
+        container('gtk3-builder') {
+          sh """
+          echo "====> building for linux and windows <===="
+          /bin/bash ./scripts/start_build_x64_for_all.sh ${VERSION} ${BUILD_NUMBER}
+          """
+        }
+      }
+    }
+    stage('make packages') {
+      steps {
+        container('debian') {
+          sh """
+            echo "====> create deb package <===="
+            /bin/bash ./build/linux/deb/make_deb.sh ${VERSION} 1 ${BUILD_NUMBER}
+          """
+          archiveArtifacts artifacts: '*.deb', followSymlinks: false, onlyIfSuccessful: true
+        }
+
+        container('fedora') {
+          sh """
+            echo "====> create rpm package <===="
+            /bin/bash ./build/linux/rpm/make_rpm.sh ${VERSION} 1 ${BUILD_NUMBER}
+          """
+          archiveArtifacts artifacts: 'rpmbuild/RPMS/*/*.rpm', followSymlinks: false, onlyIfSuccessful: true
+        }
+
+        container('windows') {
+          sh """
+          echo "====> create exe package <===="
+          sed -i "s/{appversion}/${VERSION_OR_BUILD_ID}/" build/windows/advertisementerInstall.iss
+          cp build/windows/advertisementerInstall.iss .
+          wine64 /inno/ISCC.exe advertisementerInstall.iss
+          """
+          archiveArtifacts artifacts: 'Output/*.exe', followSymlinks: false, onlyIfSuccessful: true
+        }
+        container('debian') {
+          sh """
+            echo "====> create AppImage package <===="
+            /bin/bash ./build/linux/appimage/make_appimage_from_debian.sh
+          """
+          archiveArtifacts artifacts: '*.AppImage', followSymlinks: false, onlyIfSuccessful: true
+        }
+      }
+    }
+  }
+  post {
+    failure {
+      echo "Увы"
+    }
+  }
+}
