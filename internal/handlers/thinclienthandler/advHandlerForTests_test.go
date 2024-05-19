@@ -16,7 +16,7 @@ import (
 func CreateControllerForTests() (*AdvertisementController, error) {
 	CreateLogger()
 	param := &datatransferobjects.ServerDSN{
-		Source: "127.0.0.1", UserName: "admin", Password: "admin", Port: 8080}
+		Source: "127.0.0.1", UserName: "admin", Password: "admin", Port: 4567}
 	mar, err := json.Marshal(&param)
 	if err != nil {
 		return nil, err

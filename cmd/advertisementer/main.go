@@ -62,7 +62,7 @@ func main() {
 	dbm.Register(orm.Postgres, 5432, dbmanager.NetworkDB, orm.NewDataStorageOrm(orm.Postgres))
 	dbm.Register(orm.Mysql, 3306, dbmanager.NetworkDB, orm.NewDataStorageOrm(orm.Mysql))
 	dbm.Register(orm.Sqlserver, 1433, dbmanager.NetworkDB, orm.NewDataStorageOrm(orm.Sqlserver))
-	dbm.RegisterServerGateway(8080, dbmanager.Server, server.NewServerStorage(httpsender.NewSender(), b64Enc))
+	dbm.RegisterServerGateway(4567, dbmanager.Server, server.NewServerStorage(httpsender.NewSender(), b64Enc))
 	//
 	fileStorage := &filestorage.Storage{}
 	ConfigsAccesor, err := confighandler.NewStorage(fileStorage)

@@ -68,7 +68,7 @@ func Create(req RequestGate, app Application, tools Tools, DBLists todatabasewin
 	lw.bindSignals()
 
 	lw.ConnectToServerWindow = toserverwin.BuildConnectToServerWindow(loginWinBuilder)
-	lw.ConnectToServerWindow.PortEntry.SetPlaceholderText("8080")
+	lw.ConnectToServerWindow.PortEntry.SetPlaceholderText("4567")
 	lw.ConnectToDatabaseWindow = todatabasewin.BuildConnectToDatabaseWindow(loginWinBuilder, req, tools, DBLists, folderSelector, lw, path)
 	lw.ConnectToDatabaseWindow.BindSignals()
 	lw.req = req
