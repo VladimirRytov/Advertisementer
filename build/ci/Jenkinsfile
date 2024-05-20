@@ -10,7 +10,7 @@ pipeline {
       script: '''
       if [ $(expr length + "$(git tag --contains)") -ne 0 ]; 
       then 
-      git tag --contains | sed -n 's/v//p; 
+      git tag --contains | sed -n 's/v//p'; 
       else 
       echo "0"; 
       fi
@@ -21,7 +21,7 @@ pipeline {
       script: '''
       if [ $(expr length + "$(git tag --contains)") -ne 0 ]; 
       then 
-      git tag --contains | sed -n 's/v//p; 
+      git tag --contains | sed -n 's/v//p'; 
       else 
       git log --format=%ad.%h -1 --date=format-local:%Y%m%d%H%M; 
       fi
