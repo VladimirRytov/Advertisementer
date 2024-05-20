@@ -20,13 +20,11 @@ libpixman-1-0.dll libpng16-16.dll libstdc++-6.dll libwinpthread-1.dll
 zlib1.dll iconv.dll libtiff-5.dll libfribidi-0.dll libssp-0.dll)
 
 create_icon() {
-gitvers=$(git tag --contains)
-
 go install github.com/tc-hib/go-winres@latest
 ~/go/bin/go-winres init
 cp ./assets/icons/*.png ./winres
 cp ./scripts/winres-template.json ./winres/winres.json
-sed -i 's/${VERSION}'/"$gitvers"'/' ./winres/winres.json
+sed -i 's/${VERSION}'/"$3"'/' ./winres/winres.json
 ~/go/bin/go-winres make
 }
 

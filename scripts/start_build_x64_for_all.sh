@@ -18,7 +18,7 @@ do
   fi
   echo "====> build for $dir <===="
 
-  bash ./scripts/build_x64_for_"$dir".sh $(pwd)/$dir $version &
+  bash ./scripts/build_x64_for_"$dir".sh $(pwd)/$dir $version $1 &
 done
 
 wait
