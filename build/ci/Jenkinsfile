@@ -15,17 +15,6 @@ pipeline {
       echo "0"; 
       fi
       ''').trim()
-    
-    VERSION_OR_BUILD_ID = sh(
-      returnStdout: true,
-      script: '''
-      if [ $(expr length + "$(git tag --contains)") -ne 0 ]; 
-      then 
-      git tag --contains | sed -n 's/v//p'; 
-      else 
-      git log --format=%ad.%h -1 --date=format-local:%Y%m%d%H%M; 
-      fi
-      ''').trim()
     BUILD_NUMBER = sh(
       returnStdout: true,
       script: '''
@@ -75,7 +64,7 @@ pipeline {
         container('windows') {
           sh """
           echo "====> create exe package <===="
-          sed -i "s/{appversion}/${VERSION_OR_BUILD_ID}/" build/windows/advertisementerInstall.iss
+          sed -i "s/{appversion}/${VERSION}/" build/windows/advertisementerInstall.iss
           cp build/windows/advertisementerInstall.iss .
           wine64 /inno/ISCC.exe advertisementerInstall.iss
           """
