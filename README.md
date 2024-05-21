@@ -1,5 +1,5 @@
 <h1>Описание</h1>
-<p>Программа создана для помощи в учёте рекламных объявлений печатных СМИ. Для хранения объявлений может использоваться локальная база данных SQLite, сетевые базы Postgres, Mysql и SQL Server, а также серверное ПО "ссылка".</p>
+<p>Программа создана для помощи в учёте рекламных объявлений печатных СМИ. Для хранения объявлений может использоваться локальная база данных SQLite, сетевые базы Postgres, Mysql и SQL Server, а также <a href="https://github.com/VladimirRytov/advsrv">серверное ПО</a>.</p>
 <h1>Возможности</h1>
 <ul>
   <li>Учёт контрагнетов, его заказов и объявлений.</li>
@@ -9,3 +9,5 @@
 </ul>
 <h1>Cкриншоты</h1>
 <img src="https://github.com/VladimirRytov/Advertisementer/blob/main/assets/images/mainWindow.png">
+
+<a href="https://www.flaticon.com/free-icons/advertising" title="advertising icons">Advertising icons created by juicy_fish - Flaticon</a>
