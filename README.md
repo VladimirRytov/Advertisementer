@@ -7,3 +7,5 @@
   <li>Работа с тарифными планами для автоматизации расчёта стоимости объявлений и заказов. </li>
   <li>Возможность устанавливать на объявления тэги и наценки для контроля стоимости.</li>
 </ul>
+<h1>Cкриншоты</h1>
+<img src="https://github.com/VladimirRytov/Advertisementer/blob/main/assets/images/mainWindow.png">
